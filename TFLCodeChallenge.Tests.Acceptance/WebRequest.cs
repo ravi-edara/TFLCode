@@ -20,7 +20,7 @@ namespace TFLCodeChallenge.Tests.Acceptance
 
                     return content;
                 }
-                catch (Exception ex)
+                catch
                 {
                     Thread.Sleep(10000);
                 }
