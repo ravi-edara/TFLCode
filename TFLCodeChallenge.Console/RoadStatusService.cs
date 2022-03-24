@@ -10,21 +10,30 @@ namespace TFLCodeChallenge
 {
     public class RoadStatusService : IRoadStatusService
     {
-        private string roadId;
-
         public async Task GetRoadStatus()
         {
             do
             {
                 Console.WriteLine("Enter Road id");
-                roadId = Console.ReadLine();
-                await RoadStatus(roadId);
+                var id = Console.ReadLine();
+                var data = await GetRoadStatusById(id);
+                if (data != null)
+                {
+                    Console.WriteLine($"Road Display name  is {data.DisplayName} ");
+                    Console.WriteLine($"Road Status  is {data.StatusSeverity} ");
+                    Console.WriteLine($"Road Status Description  is {data.StatusSeverityDescription} ");
+                }
+                else
+                {
+                    Console.WriteLine($"{id} is not a valid road.");
+                }
+
                 Console.WriteLine("----> Enter 'Y' to continue, any other key to exit <----");
             }
             while (Console.ReadLine().Equals("Y", StringComparison.OrdinalIgnoreCase));
         }
 
-        private async Task RoadStatus(string roadId)
+        public async Task<Road> GetRoadStatusById(string roadId)
         {
             var client = new HttpClient();
             // Request headers
@@ -39,18 +48,14 @@ namespace TFLCodeChallenge
                 var data = JsonConvert.DeserializeObject<List<Road>>(dataJson);
                 if (data != null && data.Count > 0)
                 {
-                    Console.WriteLine($"Road Display name  is {data.First().DisplayName} ");
-                    Console.WriteLine($"Road Status  is {data.First().StatusSeverity} ");
-                    Console.WriteLine($"Road Status Description  is {data.First().StatusSeverityDescription} ");
+                    return data.First();
                 }
-                else
-                {
-                    Console.WriteLine($"{roadId} is not a valid road.");
-                }
+
+                return null;
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine($"{roadId} is not a valid road.");
+                return null;
             }
         }
     }
