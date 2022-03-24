@@ -91,5 +91,12 @@ namespace TFLCodeChallenge.Tests.Unit
             // Assert
             Assert.IsNull(roadStatus);
         }
+
+        [TearDown]
+        public void Teardown()
+        {
+            //setup our DI
+            _serviceProvider = null;
+        }
     }
 }
