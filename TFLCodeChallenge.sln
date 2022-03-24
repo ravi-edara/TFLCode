@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFLCodeChallenge", "TFLCodeChallenge.Console\TFLCodeChallenge.csproj", "{4AD4C8FA-A9B0-4754-B69A-931630B0D3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFLCodeChallenge.Tests.Unit", "TFLCodeChallenge.Tests.Unit\TFLCodeChallenge.Tests.Unit.csproj", "{5CD9B4B3-600C-4888-A295-D4755D73AA47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFLCodeChallenge.Tests.Unit", "TFLCodeChallenge.Tests.Unit\TFLCodeChallenge.Tests.Unit.csproj", "{5CD9B4B3-600C-4888-A295-D4755D73AA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFLCodeChallenge.Tests.Acceptance", "TFLCodeChallenge.Tests.Acceptance\TFLCodeChallenge.Tests.Acceptance.csproj", "{63A7B06F-C149-4FB2-A210-E07D0EA6ED55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5CD9B4B3-600C-4888-A295-D4755D73AA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CD9B4B3-600C-4888-A295-D4755D73AA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CD9B4B3-600C-4888-A295-D4755D73AA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A7B06F-C149-4FB2-A210-E07D0EA6ED55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A7B06F-C149-4FB2-A210-E07D0EA6ED55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A7B06F-C149-4FB2-A210-E07D0EA6ED55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A7B06F-C149-4FB2-A210-E07D0EA6ED55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
